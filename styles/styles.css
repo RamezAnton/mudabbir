@@ -136,6 +136,11 @@
   box-sizing: border-box;
 }
 
+html, body {
+  /* يمنع التمرير الأفقي الناتج عن القائمة الجانبية المنزلقة خارج الشاشة */
+  overflow-x: hidden;
+}
+
 body {
   font-family: 'IBM Plex Sans Arabic', system-ui, 'Segoe UI', 'Tahoma', sans-serif;
   background: var(--gray-50);
@@ -399,6 +404,7 @@ button { font-family: inherit; }
   padding: 2rem;
   box-shadow: var(--shadow-sm);
   transition: var(--transition);
+  min-width: 0;
 }
 .stat-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
 .stat-label { font-size: 0.85rem; color: var(--gray-500); margin-bottom: 0.5rem; }
@@ -440,6 +446,7 @@ button { font-family: inherit; }
   padding: 1.5rem;
   box-shadow: var(--shadow-sm);
   transition: var(--transition);
+  min-width: 0; /* يسمح للبطاقة بالانكماش فيتمرر الجدول داخلها بدل توسيع العمود */
 }
 .widget-card:hover { box-shadow: var(--shadow-md); }
 .widget-header {

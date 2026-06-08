@@ -274,3 +274,40 @@
     font-size: 0.68rem;
   }
 }
+
+@media (max-width: 520px) {
+  .main-content { padding: 0.75rem; }
+  .header {
+    flex-wrap: wrap;
+    padding: 1rem;
+  }
+  .header-brand { gap: 0.65rem; }
+  .header-brand .logo-icon { width: 44px; height: 44px; }
+  .header-title h1 { font-size: 1.35rem; }
+
+  .header-actions { gap: 0.5rem; }
+  .icon-btn { width: 38px; height: 38px; }
+  .user-profile { padding: 0.35rem; }
+  .user-profile img { width: 38px; height: 38px; }
+
+  .stat-card { padding: 1.25rem; }
+  .stat-value { font-size: 1.65rem; }
+  .widget-card { padding: 1.15rem; }
+
+  .mobile-brand-name { font-size: 1.2rem; }
+  .mobile-brand .logo-icon { width: 36px; height: 36px; }
+  .burger { width: 40px; height: 40px; font-size: 1.05rem; }
+
+  .budget-row-top { grid-template-columns: 1fr; gap: 0.6rem; }
+  .budget-amount { justify-items: start; text-align: right; }
+  .account-item { grid-template-columns: 1fr; gap: 0.6rem; }
+  .account-balance { justify-self: start; }
+
+  .tx-table { min-width: 520px; }
+}
+
+@media (max-width: 360px) {
+  .stat-value { font-size: 1.45rem; }
+  .bills-grid { grid-template-columns: 1fr; }
+  .sidebar { width: min(260px, 88vw); }
+}
