@@ -137,7 +137,6 @@
 }
 
 html, body {
-  /* يمنع التمرير الأفقي الناتج عن القائمة الجانبية المنزلقة خارج الشاشة */
   overflow-x: hidden;
 }
 
@@ -153,11 +152,12 @@ button { font-family: inherit; }
 
 .dashboard {
   display: grid;
-  grid-template-columns: 280px 1fr;
+  position: relative;
+  grid-template-columns: 210px 1fr;
   grid-template-areas: "sidebar main";
   min-height: 100vh;
 }
-.sidebar      { grid-area: sidebar; }
+.sidebar { grid-area: sidebar; }
 .main-content { grid-area: main; }
 
 .sidebar {
@@ -170,7 +170,7 @@ button { font-family: inherit; }
   gap: 2rem;
   align-content: start;
   box-shadow: var(--shadow-sm);
-  position: sticky;
+  position: fixed;
   top: 0;
   height: 100vh;
   overflow-y: auto;
@@ -302,11 +302,13 @@ button { font-family: inherit; }
   box-shadow: var(--shadow-sm);
   padding: 1.25rem 1.5rem;
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: auto auto 1fr auto;
+  grid-template-areas: "brand status . actions";
   align-items: center;
   gap: 1rem;
 }
 .header-brand {
+  grid-area: brand;
   display: grid;
   grid-auto-flow: column;
   align-items: center;
@@ -318,6 +320,7 @@ button { font-family: inherit; }
 .header-title p { font-size: 0.82rem; color: var(--gray-600); }
 
 .status-pill {
+  grid-area: status;
   display: inline-grid;
   grid-auto-flow: column;
   align-items: center;
@@ -339,6 +342,7 @@ button { font-family: inherit; }
 @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
 
 .header-actions {
+  grid-area: actions;
   display: grid;
   grid-auto-flow: column;
   align-items: center;
@@ -446,7 +450,7 @@ button { font-family: inherit; }
   padding: 1.5rem;
   box-shadow: var(--shadow-sm);
   transition: var(--transition);
-  min-width: 0; /* يسمح للبطاقة بالانكماش فيتمرر الجدول داخلها بدل توسيع العمود */
+  min-width: 0;
 }
 .widget-card:hover { box-shadow: var(--shadow-md); }
 .widget-header {
