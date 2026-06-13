@@ -1,6 +1,10 @@
-@media (max-width: 1400px) {
+@media (min-width: 1280px) {
   .stat-value {
     font-size: 2rem;
+  }
+  .nav-item {
+    font-weight: 700;
+    /* font-size: small; */
   }
 }
 
@@ -322,11 +326,10 @@
     grid-area: actions;
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* buttons stay grouped on the right (RTL) */
+    justify-content: flex-start;
     gap: 0.5rem;
   }
 
-  /* push the avatar to the far left, leaving the two buttons on the right */
   .user-profile {
     margin-inline-start: auto;
   }
